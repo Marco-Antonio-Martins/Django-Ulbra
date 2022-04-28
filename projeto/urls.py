@@ -1,9 +1,7 @@
 from django.contrib import admin
-from django.urls import path
-from app_noticias.views import resumo_pessoas, index
+from django.urls import path, include
 
-urlpatterns = [
+urlpatterns = [ #passar name=""
     path('admin/', admin.site.urls),
-    path('pessoas/', resumo_pessoas),
-    path('', index)
+    path('eventos/', include('app_noticias.urls')), #include manda para app_noticias_urls
 ]
